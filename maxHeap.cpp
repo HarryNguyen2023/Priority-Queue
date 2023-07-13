@@ -101,6 +101,13 @@ T maxHeap<T>::getmax()
     return maxheap[0];
 }
 
+// Function to get the size of the heap array
+template <typename T>
+int maxHeap<T>::getSize()
+{
+    return maxheap.size();
+}
+
 int main()
 {
     // Initiate the heap 
@@ -118,6 +125,8 @@ int main()
     mheap.printHeap();
     // Get the maximum element in the heap
     std::cout<<"The maximum element in the heap is: "<<mheap.getmax()<<std::endl;
-
+    // Get the size of the heap
+    std::cout<<"Size of the heap is: "<<mheap.getSize()<<std::endl;
+    
     return 0;
 }

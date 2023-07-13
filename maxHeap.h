@@ -14,4 +14,5 @@ class maxHeap
     void remove(T data);
     void printHeap();
     T getmax();
+    int getSize();
 };
