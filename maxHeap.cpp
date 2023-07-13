@@ -14,10 +14,8 @@ void maxHeap<T>::swap(T* a, T* b)
 
 // Function to heapify the heap
 template <typename T>
-void maxHeap<T>::Heapify(int index)
+void maxHeap<T>::Heapify(int size, int index)
 {
-    // Get the size of the heap array
-    int size = maxheap.size();
     // Assign the leaft and right child of the current node position
     int largest = index;
     int left = 2*index + 1;
@@ -33,7 +31,7 @@ void maxHeap<T>::Heapify(int index)
     if(largest != index)
     {
         swap(&maxheap[index], &maxheap[largest]);
-        Heapify(largest);
+        Heapify(size, largest);
     }
 }
 
@@ -49,7 +47,7 @@ void maxHeap<T>::insert(T data)
         maxheap.push_back(data);
         // Heapify the array
         for(int i = maxheap.size() / 2 - 1; i >= 0; --i)
-            Heapify(i);
+            Heapify(maxheap.size(), i);
     }
 }
 
@@ -89,7 +87,7 @@ void maxHeap<T>::remove(T data)
     maxheap.pop_back();
     // Heapify the array once again
     for(int j = maxheap.size() / 2 - 1; j >= 0; --j)
-        Heapify(j);
+        Heapify(maxheap.size(), j);
 }
 
 // Function to get the maximum number of the heap
@@ -106,6 +104,21 @@ template <typename T>
 int maxHeap<T>::getSize()
 {
     return maxheap.size();
+}
+
+// Function to sort the array using the heap property
+template <typename T>
+void maxHeap<T>::heapsort()
+{
+    // Craete the max heap if it is not done yet
+    // for(int i = maxheap.size() / 2 - 1; i >= 0 ; --i)
+    //     Heapify(maxheap.size(), i);
+    // Heap sort algorithm
+    for(int i = maxheap.size() - 1; i >= 0; i--)
+    {
+        swap(&maxheap[i], &maxheap[0]);
+        Heapify(i, 0);
+    }
 }
 
 int main()
@@ -127,6 +140,9 @@ int main()
     std::cout<<"The maximum element in the heap is: "<<mheap.getmax()<<std::endl;
     // Get the size of the heap
     std::cout<<"Size of the heap is: "<<mheap.getSize()<<std::endl;
-    
+    // Sort the heap array
+    mheap.heapsort();
+    mheap.printHeap();
+
     return 0;
 }

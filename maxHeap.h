@@ -6,7 +6,7 @@ class maxHeap
 {
     private:
     std::vector<T> maxheap;
-    void Heapify(int index);
+    void Heapify(int size, int index);
     void swap(T* a, T* b);
 
     public:
@@ -15,4 +15,5 @@ class maxHeap
     void printHeap();
     T getmax();
     int getSize();
+    void heapsort();
 };
