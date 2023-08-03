@@ -1,14 +1,14 @@
 # include <vector>
 
-#ifndef _MAX_HEAP_
-#define _MAX_HEAP_
+#ifndef _MIN_HEAP_
+#define _MIN_HEAP_
 
-// Define the class for the implementation of the max heap
+// Define the class for the implementation of the min heap
 template <class T>
-class maxHeap
+class minHeap
 {
     private:
-    std::vector<T> maxheap;
+    std::vector<T> minheap;
     void Heapify(int size, int index);
     void swap(T* a, T* b);
 
@@ -16,7 +16,7 @@ class maxHeap
     void insert(T data);
     void remove(T data);
     void printHeap();
-    T getmax();
+    T getMin();
     int getSize();
     void heapsort();
 };
