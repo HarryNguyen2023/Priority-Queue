@@ -1,7 +1,7 @@
 # include <vector>
 
-#ifndef _MIN_HEAP_
-#define _MIN_HEAP_
+#ifndef MIN_HEAP_H
+#define MIN_HEAP_H
 
 // Define the class for the implementation of the min heap
 template <class T>

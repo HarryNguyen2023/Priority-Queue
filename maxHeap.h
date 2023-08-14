@@ -1,7 +1,7 @@
 # include <vector>
 
-#ifndef _MAX_HEAP_
-#define _MAX_HEAP_
+#ifndef MAX_HEAP_H
+#define MAX_HEAP_H
 
 // Define the class for the implementation of the max heap
 template <class T>
